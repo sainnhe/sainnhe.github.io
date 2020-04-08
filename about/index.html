@@ -148,25 +148,23 @@
   </div>
 </article>
         </div>
-        <div id="comments-gitment"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
-      var gitment = new Gitment({
+      var gitalk = new Gitalk({
         id: '2020-04-08 13:46:52 \x2b0800 \x2b0800',
         title: '关于',
-        link: decodeURI(location.href),
-        desc: 'About 关于我 目前就读于西安电子科技大学通信工程专业（2016 级）。 对 写代码 脱发很感兴趣，有空的时候会写点小玩意。 日用 Arch Linux，但其实菜得扣脚',
+        clientID: 'e010d7890412363db47b',
+        clientSecret: '3690dca31c153cdb4ba692c1db45373a08d21651',
+        repo: 'sainnhe.github.io',
         owner: '37491630',
-        repo: 'blog-comments',
-        oauth: {
-          client_id: 'e010d7890412363db47b',
-          client_secret: '3690dca31c153cdb4ba692c1db45373a08d21651'
-        }
+        admin: ['37491630'],
+        body: decodeURI(location.href)
       });
-      gitment.render('comments-gitment');
+      gitalk.render('gitalk-container');
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
 
   
 
