@@ -7,7 +7,7 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="kd">function&lt;/span> &lt;span class="nx">helloWorld&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;pre class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="kd">function&lt;/span> &lt;span class="nx">helloWorld&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">alert&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Hello, World!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
