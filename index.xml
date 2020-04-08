@@ -22,6 +22,19 @@
     </item>
     
     <item>
+      <title>𝑺𝒆𝒙𝒚 &amp; 𝑷𝒐𝒘𝒆𝒓𝒇𝒖𝒍 𝑪𝒐𝒏𝒇𝒊𝒈𝒖𝒓𝒂𝒕𝒊𝒐𝒏 𝒇𝒐𝒓 𝑳𝒊𝒈𝒉𝒕𝒍𝒊𝒏𝒆 𝒂𝒏𝒅 𝑻𝒎𝒖𝒙</title>
+      <link>https://www.sainnhe.dev/post/status-line-config/</link>
+      <pubDate>Wed, 08 Apr 2020 17:54:00 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/post/status-line-config/</guid>
+      <description>Nerd Font First of all, install a nerd font, and apply it: nerd font
+Then, pick a unicode over here: nerd font cheat sheet. In this case, search keyword sep
+After getting the unicode number, you can use it like this: :echo &amp;quot;\ue0b9&amp;quot;
+FAQ: Why are my nerdfont symbols not displaying correctly?
+The display of nerdfont can be affected by many factors, including terminal emulator, font type, font size, zoom, etc.</description>
+    </item>
+    
+    <item>
       <title>在 GitHub Pages 上搭建个人博客</title>
       <link>https://www.sainnhe.dev/post/build-blog-on-github-pages/</link>
       <pubDate>Wed, 08 Apr 2020 14:36:00 +0800</pubDate>

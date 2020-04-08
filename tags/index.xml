@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Wed, 08 Apr 2020 14:36:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2020 17:54:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.sainnhe.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linux</title>
+      <link>https://www.sainnhe.dev/tags/linux/</link>
+      <pubDate>Wed, 08 Apr 2020 17:54:00 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://www.sainnhe.dev/tags/tmux/</link>
+      <pubDate>Wed, 08 Apr 2020 17:54:00 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/tags/tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://www.sainnhe.dev/tags/vim/</link>
+      <pubDate>Wed, 08 Apr 2020 17:54:00 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/tags/vim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>other</title>
