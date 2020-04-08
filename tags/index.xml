@@ -7,9 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
+    <lastBuildDate>Wed, 08 Apr 2020 14:36:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.sainnhe.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>other</title>
+      <link>https://www.sainnhe.dev/tags/other/</link>
+      <pubDate>Wed, 08 Apr 2020 14:36:00 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/tags/other/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

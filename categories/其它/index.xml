@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sainnhe&#39;s blog</title>
-    <link>https://www.sainnhe.dev/</link>
-    <description>Recent content on sainnhe&#39;s blog</description>
+    <title>其它 on sainnhe&#39;s blog</title>
+    <link>https://www.sainnhe.dev/categories/%E5%85%B6%E5%AE%83/</link>
+    <description>Recent content in 其它 on sainnhe&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Wed, 08 Apr 2020 13:46:52 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2020 14:36:00 +0800</lastBuildDate>
     
-	<atom:link href="https://www.sainnhe.dev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.sainnhe.dev/categories/%E5%85%B6%E5%AE%83/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>关于</title>
-      <link>https://www.sainnhe.dev/about/</link>
-      <pubDate>Wed, 08 Apr 2020 13:46:52 +0800</pubDate>
-      
-      <guid>https://www.sainnhe.dev/about/</guid>
-      <description>About 关于我 目前就读于西安电子科技大学通信工程专业（2016 级）。 对 写代码 脱发很感兴趣，有空的时候会写点小玩意。 日用 Arch Linux，但其实菜得扣脚</description>
-    </item>
     
     <item>
       <title>在 GitHub Pages 上搭建个人博客</title>

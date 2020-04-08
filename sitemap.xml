@@ -9,20 +9,50 @@
   </url>
   
   <url>
-    <loc>https://www.sainnhe.dev/</loc>
-    <lastmod>2020-04-08T13:46:52+08:00</lastmod>
+    <loc>https://www.sainnhe.dev/categories/</loc>
+    <lastmod>2020-04-08T14:36:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.sainnhe.dev/categories/</loc>
+    <loc>https://www.sainnhe.dev/tags/other/</loc>
+    <lastmod>2020-04-08T14:36:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sainnhe.dev/post/</loc>
+    <lastmod>2020-04-08T14:36:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.sainnhe.dev/tags/</loc>
+    <lastmod>2020-04-08T14:36:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sainnhe.dev/categories/%E5%85%B6%E5%AE%83/</loc>
+    <lastmod>2020-04-08T14:36:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sainnhe.dev/post/build-blog-on-github-pages/</loc>
+    <lastmod>2020-04-08T14:36:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sainnhe.dev/</loc>
+    <lastmod>2020-04-08T13:46:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
