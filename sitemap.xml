@@ -37,6 +37,13 @@
   </url>
   
   <url>
+    <loc>https://www.sainnhe.dev/post/status-line-config/</loc>
+    <lastmod>2020-04-08T17:54:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.sainnhe.dev/tags/</loc>
     <lastmod>2020-04-08T17:54:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,13 +59,6 @@
   
   <url>
     <loc>https://www.sainnhe.dev/tags/vim/</loc>
-    <lastmod>2020-04-08T17:54:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.sainnhe.dev/post/status-line-config/</loc>
     <lastmod>2020-04-08T17:54:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
