@@ -48,7 +48,7 @@
 <meta itemprop="description" content="创建 Github Pages 新建一个 GitHub 仓库，仓库名为 &lt;username&gt;.github.io，其中 &lt;username&gt; 是你的用户名（不是昵称）。 比如我的用户名是 &ld">
 <meta itemprop="datePublished" content="2020-04-08T14:36:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-08T14:36:00&#43;08:00" />
-<meta itemprop="wordCount" content="1511">
+<meta itemprop="wordCount" content="1526">
 
 
 
@@ -181,7 +181,7 @@
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>过一会后从浏览器访问 <code>sainnhe.github.io</code> 就可以看到这个页面了。</p>
+</div><p>Push 到 GitHub，过一会后从浏览器访问 <code>sainnhe.github.io</code> 就可以看到这个页面了。</p>
 <h2 id="自定义域名">自定义域名</h2>
 <p>我之前在 Google Domains 买了一个域名 &ldquo;sainnhe.dev&rdquo;，我想在 GitHub Pages 中用我自己的域名。</p>
 <p>在项目的 <strong>Settings</strong> -&gt; <strong>Options</strong> 界面找到 <strong>Github Pages</strong>，输入 <code>www.sainnhe.dev</code> 并保存。</p>
@@ -261,7 +261,7 @@ $ git push -u origin master
 <p>在 <code>sainnhe/blog</code> 项目主页中，找到 <code>Repository Settings</code> -&gt; <code>Secrets</code> -&gt; 添加这个私钥的内容并命名为 <code>ACTIONS_DEPLOY_KEY</code></p>
 <p>在 <code>sainnhe/sainnhe.github.io</code> 项目主页中，找到 <code>Repository Settings</code> -&gt; <code>Deploy Keys</code> -&gt; 添加这个公钥的内容，并勾选 <code>Allow write access</code></p>
 <p>这是我的 GitHub Actions 配置文件，仅供参考：</p>
-<p><code>blog/.github/workflows/gh-pages.yml</code></p>
+<p><code>sainnhe/blog</code> 仓库中新建 <code>/.github/workflows/gh-pages.yml</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
