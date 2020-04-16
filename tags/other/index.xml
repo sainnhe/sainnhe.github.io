@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Wed, 08 Apr 2020 14:36:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2020 12:59:23 +0800</lastBuildDate>
     
 	<atom:link href="https://www.sainnhe.dev/tags/other/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Preview of iCursive Nerd Fonts</title>
+      <link>https://www.sainnhe.dev/post/icursive-nerd-font-preview/</link>
+      <pubDate>Thu, 16 Apr 2020 12:59:23 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/post/icursive-nerd-font-preview/</guid>
+      <description>Fira Code iCursive S12 FiraCode(by tonsky, SIL Open Font License) + Script12 BT(by Bitstream, free for personal use) Fira Code iCursive Op (Non-free) FiraCode(by tonsky, SIL Open Font License) + Operator Mono(by Hoefler&amp;amp;Co, paid) Source Code Pro iCursive S12 Source Code Pro(by Paul D. Hunt (Adobe), SIL Open Font License) + Script12 BT(by Bitstream, free for personal use) Source Code Pro iCursive Op (Non-free) Source Code Pro(by Paul D. Hunt</description>
+    </item>
     
     <item>
       <title>在 GitHub Pages 上搭建个人博客</title>
