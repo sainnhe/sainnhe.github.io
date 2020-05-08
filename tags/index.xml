@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Thu, 16 Apr 2020 12:59:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2020 14:36:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.sainnhe.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,18 @@
     <item>
       <title>other</title>
       <link>https://www.sainnhe.dev/tags/other/</link>
-      <pubDate>Thu, 16 Apr 2020 12:59:23 +0800</pubDate>
+      <pubDate>Fri, 08 May 2020 14:36:00 +0800</pubDate>
       
       <guid>https://www.sainnhe.dev/tags/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://www.sainnhe.dev/tags/vscode/</link>
+      <pubDate>Fri, 08 May 2020 14:36:00 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/tags/vscode/</guid>
       <description></description>
     </item>
     

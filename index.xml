@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Contribution Guide for sainnhe/gruvbox-material-vscode</title>
+      <link>https://www.sainnhe.dev/post/gruvbox-material-vscode-contrib/</link>
+      <pubDate>Fri, 08 May 2020 14:36:00 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/post/gruvbox-material-vscode-contrib/</guid>
+      <description>Start First of all, let&amp;rsquo;s try to package this extension and install it to your vscode. 1 2 3 4 5 $ git clone --depth 1 https://github.com/sainnhe/gruvbox-material-vscode.git $ cd gruvbox-material-vscode $ npm install $ vsce package # see https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce $ code --install-extension ./gruvbox-material-6.2.1.vsix Now, use vscode to open this project and modify some code, then press F5 to start debugging. The theme files The most critical files for a theme</description>
+    </item>
+    
+    <item>
       <title>Preview of iCursive Nerd Fonts</title>
       <link>https://www.sainnhe.dev/post/icursive-nerd-font-preview/</link>
       <pubDate>Thu, 16 Apr 2020 12:59:23 +0800</pubDate>

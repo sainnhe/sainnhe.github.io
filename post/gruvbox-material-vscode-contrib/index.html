@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Contribution Guide for sainnhe/gruvbox-material-vscode - sainnhe&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#313441" />
+<meta name="msapplication-navbutton-color" content="#313441">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#313441">
+
+
+<meta name="author" content="sainnhe" /><meta name="description" content="Start First of all, let&amp;rsquo;s try to package this extension and install it to your vscode. 1 2 3 4 5 $ git clone --depth 1 https://github.com/sainnhe/gruvbox-material-vscode.git $ cd gruvbox-material-vscode $ npm install $ vsce package # see https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce $ code --install-extension ./gruvbox-material-6.2.1.vsix Now, use vscode to open this project and modify some code, then press F5 to start debugging. The theme files The most critical files for a theme" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.70.0 with theme even" />
+
+
+<link rel="canonical" href="https://www.sainnhe.dev/post/gruvbox-material-vscode-contrib/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.19d8f9d5.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Contribution Guide for sainnhe/gruvbox-material-vscode" />
+<meta property="og:description" content="Start First of all, let&rsquo;s try to package this extension and install it to your vscode. 1 2 3 4 5 $ git clone --depth 1 https://github.com/sainnhe/gruvbox-material-vscode.git $ cd gruvbox-material-vscode $ npm install $ vsce package # see https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce $ code --install-extension ./gruvbox-material-6.2.1.vsix Now, use vscode to open this project and modify some code, then press F5 to start debugging. The theme files The most critical files for a theme" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.sainnhe.dev/post/gruvbox-material-vscode-contrib/" />
+<meta property="article:published_time" content="2020-05-08T14:36:00+08:00" />
+<meta property="article:modified_time" content="2020-05-08T20:42:29+08:00" />
+<meta itemprop="name" content="Contribution Guide for sainnhe/gruvbox-material-vscode">
+<meta itemprop="description" content="Start First of all, let&rsquo;s try to package this extension and install it to your vscode. 1 2 3 4 5 $ git clone --depth 1 https://github.com/sainnhe/gruvbox-material-vscode.git $ cd gruvbox-material-vscode $ npm install $ vsce package # see https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce $ code --install-extension ./gruvbox-material-6.2.1.vsix Now, use vscode to open this project and modify some code, then press F5 to start debugging. The theme files The most critical files for a theme">
+<meta itemprop="datePublished" content="2020-05-08T14:36:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-08T20:42:29&#43;08:00" />
+<meta itemprop="wordCount" content="623">
+
+
+
+<meta itemprop="keywords" content="other,vscode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Contribution Guide for sainnhe/gruvbox-material-vscode"/>
+<meta name="twitter:description" content="Start First of all, let&rsquo;s try to package this extension and install it to your vscode. 1 2 3 4 5 $ git clone --depth 1 https://github.com/sainnhe/gruvbox-material-vscode.git $ cd gruvbox-material-vscode $ npm install $ vsce package # see https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce $ code --install-extension ./gruvbox-material-6.2.1.vsix Now, use vscode to open this project and modify some code, then press F5 to start debugging. The theme files The most critical files for a theme"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">sainnhe&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">sainnhe&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Contribution Guide for sainnhe/gruvbox-material-vscode</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-08 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%85%B6%E5%AE%83/"> 其它 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#start">Start</a></li>
+    <li><a href="#the-theme-files">The theme files</a></li>
+    <li><a href="#publishing">Publishing</a></li>
+    <li><a href="#some-designs">Some designs</a></li>
+    <li><a href="#to-do--enhancement">To do &amp; enhancement</a></li>
+    <li><a href="#note">Note</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="start">Start</h2>
+<p>First of all, let&rsquo;s try to package this extension and install it to your vscode.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ git clone --depth <span class="m">1</span> https://github.com/sainnhe/gruvbox-material-vscode.git
+$ <span class="nb">cd</span> gruvbox-material-vscode
+$ npm install
+$ vsce package <span class="c1"># see https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce</span>
+$ code --install-extension ./gruvbox-material-6.2.1.vsix
+</code></pre></td></tr></table>
+</div>
+</div><p>Now, use vscode to open this project and modify some code, then press <code>F5</code> to start debugging.</p>
+<h2 id="the-theme-files">The theme files</h2>
+<p>The most critical files for a theme extension are some json files located in <a href="https://github.com/sainnhe/gruvbox-material-vscode/tree/v6.2.1/themes">/themes</a>, they defined all the colors of a theme.</p>
+<p>A theme file can be roughly divided into three parts:</p>
+<ul>
+<li><a href="https://github.com/sainnhe/gruvbox-material-vscode/blob/v6.2.1/themes/gruvbox-material-dark.json#L25-L332">workbench colors</a>: The UI of vscode.</li>
+<li><a href="https://github.com/sainnhe/gruvbox-material-vscode/blob/v6.2.1/themes/gruvbox-material-dark.json#L333-L2117">syntax highlighting</a>: The syntax highlighting.</li>
+<li><a href="https://github.com/sainnhe/gruvbox-material-vscode/blob/v6.2.1/themes/gruvbox-material-dark.json#L5-L24">semantic highlighting</a>: This is a new feature since vscode 1.43, see <a href="https://github.com/microsoft/vscode/wiki/Semantic-Highlighting-Overview">Semantic Highlighting Overview</a>. This feature is experimental, currently supports js, ts, java and C family.</li>
+</ul>
+<p>For all available workbench colors, see <a href="https://code.visualstudio.com/api/references/theme-color">this documentation</a>.</p>
+<p>To get current token of syntax highlighting or semantic highlighting, press <code>Ctrl+Shift+P</code> to open command panel and search for &ldquo;Inspect Editor Tokens and Scopes&rdquo;.</p>
+<p>In this extension, the json files will be automatically generated when user configuration changes, so don&rsquo;t keep your changes in the json files, but modify the typescript code instead.</p>
+<h2 id="publishing">Publishing</h2>
+<p>If you are a maintainer of this project and want to publish a new version to the vscode marketplace, do something like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ vsce login sainnhe <span class="c1"># Only required for the first time, email me and I&#39;ll send you the personal access token.</span>
+$ vsce publish v6.2.2 <span class="c1"># Will modify the &#34;version&#34; key in package.json, then package this extension and publish it. Please make sure the network is connected.</span>
+$ git push origin master v6.2.2 <span class="c1"># Push new commits and tag to github.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>See <a href="https://code.visualstudio.com/api/working-with-extensions/publishing-extension">this documentation</a> for more information.</p>
+<h2 id="some-designs">Some designs</h2>
+<p>There are 3 workbench styles available in this theme:</p>
+<ul>
+<li>material: inspired by <a href="https://github.com/material-theme/vsc-material-theme">material-theme/vsc-material-theme</a></li>
+<li>flat: inspired by <a href="https://github.com/Binaryify/OneDark-Pro">Binaryify/OneDark-Pro</a></li>
+<li>high contrast: inspired by <a href="https://monokai.pro/vscode">Monokai Pro</a></li>
+</ul>
+<p>It&rsquo;s highly recommended to try them first if you want to modify the code of a workbench style.</p>
+<p>In addition, this theme is designed to be borderless, so please DO NOT add unnecessary borders.</p>
+<p>There are 2 syntax highlighting logic available in this theme: default and colorful</p>
+<p>In the default syntax highlighting logic, only minimum but necessary tokens will be colored, because if everything is special, then nothing is special.</p>
+<p>Unnecessary tokens include: variables, properties, members, parameters, etc.</p>
+<p>In contrast, in the colorful syntax highlighting logic, as many tokens as possible will be colored.</p>
+<h2 id="to-do--enhancement">To do &amp; enhancement</h2>
+<p>The source code is based on <a href="https://github.com/Binaryify/OneDark-Pro">Binaryify/OneDark-Pro</a>, but some features haven&rsquo;t been implemented.</p>
+<p>When debugging this extension and the source code is modified, it won&rsquo;t recompile automatically. It&rsquo;s pretty painful though, but I&rsquo;m too lazy to fixed it.</p>
+<p>The <code>/themes/*.json</code> should be generated automatically using default settings when executing <code>vsce package</code> or <code>vsce publish</code>, but this has not been implemented yet. You&rsquo;ll need to generate the json files manually if the code that&rsquo;ll effect the theme files when using default settings is modified.</p>
+<p>The <a href="https://github.com/robb0wen/synthwave-vscode">robb0wen/synthwave-vscode</a> looks awesome, and I plan to add a feature that&rsquo;ll generate the css file when user settings change, but I don&rsquo;t know when and how.</p>
+<h2 id="note">Note</h2>
+<ul>
+<li>
+<p>DO NOT add new colors or modify existing colors in <a href="https://github.com/sainnhe/gruvbox-material-vscode/tree/master/src/palette">/src/palette</a>. The current color palettes are very carefully designed and tested on several devices. If you do want to change the color palettes, create a new theme extension instead.</p>
+</li>
+<li>
+<p>Don&rsquo;t add new configuration options casually, there are already so many configuration options and too many options may confuse users.</p>
+</li>
+<li>
+<p>Don&rsquo;t forget to update the changelog.</p>
+</li>
+<li>
+<p>Don&rsquo;t forget to update <a href="https://github.com/sainnhe/gruvbox-material-vscode/blob/master/src/syntax/italic.ts">italic syntax file</a> if the syntax source code is modified.</p>
+</li>
+<li>
+<p>Comments including <code>{{{</code> or <code>}}}</code> are vim fold markers, I use them to fold the code in vim, so don&rsquo;t delete them.</p>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">sainnhe</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-05-08
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/other/">other</a>
+          <a href="/tags/vscode/">vscode</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/icursive-nerd-font-preview/">
+            <span class="next-text nav-default">Preview of iCursive Nerd Fonts</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="sainnhe/sainnhe.github.io"
+            issue-term="pathname"
+            theme="photon-dark"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sainnhe@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/sainnhe/" class="iconfont icon-github" title="github"></a>
+  <a href="https://www.sainnhe.dev/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"> sainnhe</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.517858dd.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

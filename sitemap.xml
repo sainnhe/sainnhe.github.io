@@ -10,77 +10,91 @@
   
   <url>
     <loc>https://www.sainnhe.dev/categories/</loc>
-    <lastmod>2020-04-16T13:19:08+08:00</lastmod>
+    <lastmod>2020-05-08T20:42:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sainnhe.dev/post/gruvbox-material-vscode-contrib/</loc>
+    <lastmod>2020-05-08T20:42:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.sainnhe.dev/tags/other/</loc>
-    <lastmod>2020-04-16T13:19:08+08:00</lastmod>
+    <lastmod>2020-05-08T20:42:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.sainnhe.dev/post/</loc>
-    <lastmod>2020-04-16T13:19:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.sainnhe.dev/post/icursive-nerd-font-preview/</loc>
-    <lastmod>2020-04-16T13:19:08+08:00</lastmod>
+    <lastmod>2020-05-08T20:42:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.sainnhe.dev/tags/</loc>
-    <lastmod>2020-04-16T13:19:08+08:00</lastmod>
+    <lastmod>2020-05-08T20:42:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.sainnhe.dev/tags/vim/</loc>
-    <lastmod>2020-04-16T13:19:08+08:00</lastmod>
+    <loc>https://www.sainnhe.dev/tags/vscode/</loc>
+    <lastmod>2020-05-08T20:42:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.sainnhe.dev/categories/%E5%85%B6%E5%AE%83/</loc>
-    <lastmod>2020-04-16T13:19:08+08:00</lastmod>
+    <lastmod>2020-05-08T20:42:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sainnhe.dev/post/icursive-nerd-font-preview/</loc>
+    <lastmod>2020-05-08T18:31:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sainnhe.dev/tags/vim/</loc>
+    <lastmod>2020-05-08T18:31:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.sainnhe.dev/categories/linux/</loc>
-    <lastmod>2020-04-16T13:12:10+08:00</lastmod>
+    <lastmod>2020-05-08T18:31:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.sainnhe.dev/tags/linux/</loc>
-    <lastmod>2020-04-16T13:12:10+08:00</lastmod>
+    <lastmod>2020-05-08T18:31:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.sainnhe.dev/post/status-line-config/</loc>
-    <lastmod>2020-04-16T13:12:10+08:00</lastmod>
+    <lastmod>2020-05-08T18:31:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.sainnhe.dev/tags/tmux/</loc>
-    <lastmod>2020-04-16T13:12:10+08:00</lastmod>
+    <lastmod>2020-05-08T18:31:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
