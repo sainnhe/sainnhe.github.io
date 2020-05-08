@@ -43,11 +43,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.sainnhe.dev/post/gruvbox-material-vscode-contrib/" />
 <meta property="article:published_time" content="2020-05-08T14:36:00+08:00" />
-<meta property="article:modified_time" content="2020-05-08T20:42:29+08:00" />
+<meta property="article:modified_time" content="2020-05-08T21:00:32+08:00" />
 <meta itemprop="name" content="Contribution Guide for sainnhe/gruvbox-material-vscode">
 <meta itemprop="description" content="Start First of all, let&rsquo;s try to package this extension and install it to your vscode. 1 2 3 4 5 $ git clone --depth 1 https://github.com/sainnhe/gruvbox-material-vscode.git $ cd gruvbox-material-vscode $ npm install $ vsce package # see https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce $ code --install-extension ./gruvbox-material-6.2.1.vsix Now, use vscode to open this project and modify some code, then press F5 to start debugging. The theme files The most critical files for a theme">
 <meta itemprop="datePublished" content="2020-05-08T14:36:00&#43;08:00" />
-<meta itemprop="dateModified" content="2020-05-08T20:42:29&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-08T21:00:32&#43;08:00" />
 <meta itemprop="wordCount" content="623">
 
 
@@ -208,7 +208,7 @@ $ git push origin master v6.2.2 <span class="c1"># Push new commits and tag to g
 <p>In contrast, in the colorful syntax highlighting logic, as many tokens as possible will be colored.</p>
 <h2 id="to-do--enhancement">To do &amp; enhancement</h2>
 <p>The source code is based on <a href="https://github.com/Binaryify/OneDark-Pro">Binaryify/OneDark-Pro</a>, but some features haven&rsquo;t been implemented.</p>
-<p>When debugging this extension and the source code is modified, it won&rsquo;t recompile automatically. It&rsquo;s pretty painful though, but I&rsquo;m too lazy to fixed it.</p>
+<p>When debugging this extension and the source code is modified, it won&rsquo;t recompile automatically. It&rsquo;s pretty painful though, but I&rsquo;m too lazy to fix it.</p>
 <p>The <code>/themes/*.json</code> should be generated automatically using default settings when executing <code>vsce package</code> or <code>vsce publish</code>, but this has not been implemented yet. You&rsquo;ll need to generate the json files manually if the code that&rsquo;ll effect the theme files when using default settings is modified.</p>
 <p>The <a href="https://github.com/robb0wen/synthwave-vscode">robb0wen/synthwave-vscode</a> looks awesome, and I plan to add a feature that&rsquo;ll generate the css file when user settings change, but I don&rsquo;t know when and how.</p>
 <h2 id="note">Note</h2>
