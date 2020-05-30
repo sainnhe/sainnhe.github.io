@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Wed, 08 Apr 2020 13:46:52 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 16:32:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.sainnhe.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,15 @@
       
       <guid>https://www.sainnhe.dev/about/</guid>
       <description>About 关于我 目前就读于西安电子科技大学通信工程专业（2016 级）。 喜欢 写代码 写 Bug，有空的时候会做点小玩意。 日用 Arch Linux，但其实菜得扣脚 (</description>
+    </item>
+    
+    <item>
+      <title>创建 Wifi 热点共享 V2ray</title>
+      <link>https://www.sainnhe.dev/post/v2ray-hotspot/</link>
+      <pubDate>Sat, 30 May 2020 16:32:00 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/post/v2ray-hotspot/</guid>
+      <description>前言 V2ray 可以通过局域网共享代理，但是这要求在另一台设备上配置这个代理的 IP 地址和端口号，而有些设备不支持自定义这些代理配置，所以我想尝试一下直接</description>
     </item>
     
     <item>

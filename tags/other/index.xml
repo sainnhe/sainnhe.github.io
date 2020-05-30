@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Fri, 08 May 2020 14:36:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 16:32:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.sainnhe.dev/tags/other/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>创建 Wifi 热点共享 V2ray</title>
+      <link>https://www.sainnhe.dev/post/v2ray-hotspot/</link>
+      <pubDate>Sat, 30 May 2020 16:32:00 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/post/v2ray-hotspot/</guid>
+      <description>前言 V2ray 可以通过局域网共享代理，但是这要求在另一台设备上配置这个代理的 IP 地址和端口号，而有些设备不支持自定义这些代理配置，所以我想尝试一下直接</description>
+    </item>
     
     <item>
       <title>Contribution Guide for sainnhe/gruvbox-material-vscode</title>
