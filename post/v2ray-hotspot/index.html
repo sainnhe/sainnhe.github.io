@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>创建 Wifi 热点共享 V2ray - sainnhe&#39;s blog</title>
+  <title>通过创建 Wifi 热点来共享 V2ray 代理 - sainnhe&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -38,22 +38,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="创建 Wifi 热点共享 V2ray" />
+<meta property="og:title" content="通过创建 Wifi 热点来共享 V2ray 代理" />
 <meta property="og:description" content="前言 V2ray 可以通过局域网共享代理，但是这要求在另一台设备上配置这个代理的 IP 地址和端口号，而有些设备不支持自定义这些代理配置，所以我想尝试一下直接" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.sainnhe.dev/post/v2ray-hotspot/" />
 <meta property="article:published_time" content="2020-05-30T16:32:00+08:00" />
 <meta property="article:modified_time" content="2020-05-30T16:32:00+08:00" />
-<meta itemprop="name" content="创建 Wifi 热点共享 V2ray">
+<meta itemprop="name" content="通过创建 Wifi 热点来共享 V2ray 代理">
 <meta itemprop="description" content="前言 V2ray 可以通过局域网共享代理，但是这要求在另一台设备上配置这个代理的 IP 地址和端口号，而有些设备不支持自定义这些代理配置，所以我想尝试一下直接">
 <meta itemprop="datePublished" content="2020-05-30T16:32:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-30T16:32:00&#43;08:00" />
-<meta itemprop="wordCount" content="874">
+<meta itemprop="wordCount" content="961">
 
 
 
 <meta itemprop="keywords" content="other," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="创建 Wifi 热点共享 V2ray"/>
+<meta name="twitter:title" content="通过创建 Wifi 热点来共享 V2ray 代理"/>
 <meta name="twitter:description" content="前言 V2ray 可以通过局域网共享代理，但是这要求在另一台设备上配置这个代理的 IP 地址和端口号，而有些设备不支持自定义这些代理配置，所以我想尝试一下直接"/>
 
 <!--[if lte IE 9]>
@@ -121,7 +121,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">创建 Wifi 热点共享 V2ray</h1>
+      <h1 class="post-title">通过创建 Wifi 热点来共享 V2ray 代理</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-05-30 </span>
@@ -178,7 +178,7 @@
 <ol>
 <li>一台运行 Windows 且能够开启热点的 PC。</li>
 <li><a href="https://github.com/solikethis/SSTap-backup/raw/master/SSTap-beta-setup-1.0.9.7.exe.7z">SSTap 1.0.9.7</a></li>
-<li><a href="https://github.com/2dust/v2rayN/releases">V2rayN</a></li>
+<li><a href="https://www.connectify.me/">Connectify Hotspot</a></li>
 </ol>
 <h3 id="配置-1">配置</h3>
 <h4 id="配置-sstap">配置 SSTap</h4>
@@ -203,6 +203,10 @@
 <p>然后打开手机，连接上这个热点，就可以实现科学上网了。</p>
 <p>这里需要注意的是，当不使用 SSTap 时（即断开 SSTap 连接时），需要将你当前有网络的网卡设置共享给热点虚拟网卡，否则这个热点将不能接入互联网。比如这里就是要将“WLAN”这个网卡按照同样的方式共享给“本地连接* 2”</p>
 <p>这种共享热点的方式需要让一台 PC 始终处于开机状态，我这里正好有一台比较老的跑 Windows 的 PC 可以用来当热点，所以比较适合我。如果你想用你的树莓派来干这事的话，可以参考这篇文章：<a href="https://toutyrater.github.io/app/tproxy.html">透明代理(TPROXY)</a></p>
+<h4 id="connectify-hotspot">Connectify Hotspot</h4>
+<p>系统内置的热点不太稳定，除了通过配置虚拟网卡外，还可以直接用 Connectify Hotspot。</p>
+<p>在配置好 SSTAP 后，打开 Connectify Hotspot，点击 <code>Wi-Fi热点</code>，选择 SSTAP 创建的适配器，然后启动热点。</p>
+<p><img src="https://i.loli.net/2018/12/16/5c162c01cb7f4.png" alt=""></p>
 
     </div>
 
