@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Sat, 30 May 2020 16:32:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 19:18:44 +0800</lastBuildDate>
     
 	<atom:link href="https://www.sainnhe.dev/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 ArchLinux/SurfaceBook2 上安装配置英伟达显卡</title>
+      <link>https://www.sainnhe.dev/post/arch-linux-surface-nvidia/</link>
+      <pubDate>Sat, 20 Jun 2020 19:18:44 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/post/arch-linux-surface-nvidia/</guid>
+      <description>魔改内核 为了启用 SB2 的一些独有的特性如触摸屏和手写笔等，首先要把默认的内核换成魔改内核，这里推荐 linux-surface/linux-sur</description>
+    </item>
     
     <item>
       <title>通过创建 Wifi 热点来共享 V2ray 代理</title>
