@@ -27,10 +27,9 @@
       <pubDate>Fri, 24 Jul 2020 13:10:14 +0800</pubDate>
       
       <guid>https://www.sainnhe.dev/post/plasma-blur/</guid>
-      <description>Preparation To begin with, make sure you have already enabled blur effect via Kvantum and some themes that support blur, for example Sweet
-Script I wrote a simple script that can launch application and blur the window automatically:
-plasma-blur.sh:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  #!/usr/bin/env sh  # Usage: # .</description>
+      <description>About The newest KDE plasma natively support blur, but it has many limitations, for example I can&amp;rsquo;t blur vim status line and firefox. This article tries to find a way to blur any window in plasma, like this:
+Preparation To begin with, make sure you have already enabled blur effect via Kvantum and some themes that support blur, for example Sweet
+Script I wrote a simple script that can launch application and blur the window automatically: plasma-blur.</description>
     </item>
     
     <item>
