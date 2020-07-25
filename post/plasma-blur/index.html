@@ -47,13 +47,13 @@ Script I wrote a simple script that can launch application and blur the window a
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.sainnhe.dev/post/plasma-blur/" />
 <meta property="article:published_time" content="2020-07-24T13:10:14+08:00" />
-<meta property="article:modified_time" content="2020-07-25T09:30:14+08:00" />
+<meta property="article:modified_time" content="2020-07-25T10:06:34+08:00" />
 <meta itemprop="name" content="Blur Any Window in KDE Plasma">
 <meta itemprop="description" content="About The newest KDE plasma natively support blur, but it has many limitations, for example I can&rsquo;t blur vim status line and firefox. This article tries to find a way to blur any window in plasma, like this:
 Preparation To begin with, make sure you have already enabled blur effect via Kvantum and some themes that support blur, for example Sweet
 Script I wrote a simple script that can launch application and blur the window automatically:">
 <meta itemprop="datePublished" content="2020-07-24T13:10:14+08:00" />
-<meta itemprop="dateModified" content="2020-07-25T09:30:14+08:00" />
+<meta itemprop="dateModified" content="2020-07-25T10:06:34+08:00" />
 <meta itemprop="wordCount" content="470">
 
 
@@ -210,7 +210,7 @@ Script I wrote a simple script that can launch application and blur the window a
 <span class="c1"># Blur</span>
 <span class="nv">i</span><span class="o">=</span><span class="m">0</span>
 <span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span> -lt <span class="m">18</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span>
-        <span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> -lt <span class="m">6</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span> -lt <span class="m">6</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
                 sleep 0.1s
         <span class="k">else</span>
                 sleep 0.2s
