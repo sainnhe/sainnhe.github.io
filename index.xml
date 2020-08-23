@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Fri, 24 Jul 2020 13:10:14 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2020 10:51:21 +0800</lastBuildDate>
     
 	<atom:link href="https://www.sainnhe.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,15 @@
       
       <guid>https://www.sainnhe.dev/about/</guid>
       <description>About 关于我 目前就读于西安电子科技大学通信工程专业（2016 级）。 喜欢 写代码 写 Bug，有空的时候会做点小玩意。 日用 Arch Linux，但其实菜得扣脚 (</description>
+    </item>
+    
+    <item>
+      <title>Install Void Linux on WSL2</title>
+      <link>https://www.sainnhe.dev/post/void-wsl2/</link>
+      <pubDate>Sun, 23 Aug 2020 10:51:21 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/post/void-wsl2/</guid>
+      <description>About Windows 10 version 1909 is finally available for my surface device, I&amp;rsquo;ve waited for it for several months since there is a very important new feature: WSL2 IMO, WSL1 is not suitable for daily development because the performance is TOO BAD. Can you imagine I spent 15 minutes but still cannon launch neovim while it only took about 100 milliseconds in physical arch linux? Compared to WSL1, the performance</description>
     </item>
     
     <item>

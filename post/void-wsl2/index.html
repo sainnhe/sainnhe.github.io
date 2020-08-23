@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Install Void Linux on WSL2 - sainnhe&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#313441" />
+<meta name="msapplication-navbutton-color" content="#313441">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#313441">
+
+
+<meta name="author" content="sainnhe" /><meta name="description" content="About Windows 10 version 1909 is finally available for my surface device, I&amp;rsquo;ve waited for it for several months since there is a very important new feature: WSL2 IMO, WSL1 is not suitable for daily development because the performance is TOO BAD. Can you imagine I spent 15 minutes but still cannon launch neovim while it only took about 100 milliseconds in physical arch linux? Compared to WSL1, the performance" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.74.3 with theme even" />
+
+
+<link rel="canonical" href="https://www.sainnhe.dev/post/void-wsl2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.19d8f9d5.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Install Void Linux on WSL2" />
+<meta property="og:description" content="About Windows 10 version 1909 is finally available for my surface device, I&rsquo;ve waited for it for several months since there is a very important new feature: WSL2 IMO, WSL1 is not suitable for daily development because the performance is TOO BAD. Can you imagine I spent 15 minutes but still cannon launch neovim while it only took about 100 milliseconds in physical arch linux? Compared to WSL1, the performance" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.sainnhe.dev/post/void-wsl2/" />
+<meta property="article:published_time" content="2020-08-23T10:51:21+08:00" />
+<meta property="article:modified_time" content="2020-08-23T10:53:03+08:00" />
+<meta itemprop="name" content="Install Void Linux on WSL2">
+<meta itemprop="description" content="About Windows 10 version 1909 is finally available for my surface device, I&rsquo;ve waited for it for several months since there is a very important new feature: WSL2 IMO, WSL1 is not suitable for daily development because the performance is TOO BAD. Can you imagine I spent 15 minutes but still cannon launch neovim while it only took about 100 milliseconds in physical arch linux? Compared to WSL1, the performance">
+<meta itemprop="datePublished" content="2020-08-23T10:51:21+08:00" />
+<meta itemprop="dateModified" content="2020-08-23T10:53:03+08:00" />
+<meta itemprop="wordCount" content="568">
+
+
+
+<meta itemprop="keywords" content="linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install Void Linux on WSL2"/>
+<meta name="twitter:description" content="About Windows 10 version 1909 is finally available for my surface device, I&rsquo;ve waited for it for several months since there is a very important new feature: WSL2 IMO, WSL1 is not suitable for daily development because the performance is TOO BAD. Can you imagine I spent 15 minutes but still cannon launch neovim while it only took about 100 milliseconds in physical arch linux? Compared to WSL1, the performance"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">sainnhe&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">sainnhe&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Install Void Linux on WSL2</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-08-23 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#preparation">Preparation</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#post-install">Post Install</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="about">About</h2>
+<p>Windows 10 version 1909 is finally available for my surface device, I&rsquo;ve waited for it for several months since there is a very important new feature: WSL2</p>
+<p>IMO, WSL1 is not suitable for daily development because the performance is TOO BAD. Can you imagine I spent 15 minutes but still cannon launch neovim while it only took about 100 milliseconds in physical arch linux?</p>
+<p>Compared to WSL1, the performance of WSL2 has been greatly improved. I think it&rsquo;s time to try WSL again.</p>
+<p>This time I decided to try void linux. Void linux is an independent rolling release linux distribution, it uses runit as its init system instead of systemd which is generally used in most of distros. Systemd has caused a lot of controversy in the linux community. I personally don’t like it either, I prefer openrc which is developed by gentoo. But looks like runit is also a great alternative to systemd, it might be worth trying, although I&rsquo;m not sure if it works in WSL2.</p>
+<p>Another great feature of void linux is that it officially supports both glibc and musl libc. Musl libc is an implementation of the C standard library. Compared to glibc which is used in most of the distros, musl libc is more lightweight and is written with more security in mind. Here is a detailed comparison: <a href="https://www.etalabs.net/compare_libcs.html">https://www.etalabs.net/compare_libcs.html</a></p>
+<h2 id="preparation">Preparation</h2>
+<p>To begin with, follow this official guide to enable WSL2: <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a></p>
+<p>Then download the <code>x86_64-musl</code> rootfs tarballs: <a href="https://alpha.de.repo.voidlinux.org/live/current/">https://alpha.de.repo.voidlinux.org/live/current/</a></p>
+<p>And verify it:</p>
+<p>Open powershell and execute</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">&gt; CertUtil -hashfile void-x86_64-musl-ROOTFS-20191109.tar.xz SHA256
+SHA256 的 void-x86_64-musl-ROOTFS-20191109.tar.xz 哈希:
+c3540f9e829e144041271fa7d2e5fd64c64ce8efee3e1955ce90a7e890eedd33
+CertUtil: -hashfile 命令成功完成。
+</code></pre></td></tr></table>
+</div>
+</div><p>Compare the output of this command with <a href="https://alpha.de.repo.voidlinux.org/live/current/sha256.txt">sha256.txt</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>First of all, install Ubuntu on WSL1:</p>
+<ol>
+<li>Install Ubuntu from Microsoft Store: <a href="https://www.microsoft.com/store/productId/9NBLGGH4MSV6">Ubuntu</a></li>
+<li>Make sure Ubuntu is installed on WSL1 instead of WSL2: <code>wsl --set-version Ubuntu 1</code></li>
+<li>Make sure the default user is root: <code>ubuntu config --default-user root</code></li>
+</ol>
+<p>Now, launch ubuntu from the Start Menu.</p>
+<p>Extract the tarball:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># tar -xvf /mnt/c/Users/username/Downloads/void-x86_64-musl-ROOTFS-20191109.tar.xz
+</code></pre></td></tr></table>
+</div>
+</div><p>You may want to change the mirror of void linux:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># mkdir -p ./etc/xbps.d
+# cp ./usr/share/xbps.d/*-repository-*.conf ./etc/xbps.d/
+# sed -i &#39;s|https://alpha.de.repo.voidlinux.org|https://mirrors.tuna.tsinghua.edu.cn/voidlinux|g&#39; ./etc/xbps.d/*-repository-*.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>Let WSL generate <code>/etc/resolv.conf</code> automatically:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># echo &#34;# This file was automatically generated by WSL. To stop automatic generation of this file, remove this line.&#34; &gt; ./etc/resolv.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>Exit Ubuntu.</p>
+<p>Open windows file explorer, navigate to <code>%localappdata%\Packages</code> and find <code>CanonicalGroupLimited.UbuntuonWindows_*</code>.</p>
+<p>In <code>%localappdata%\Packages\CanonicalGroupLimited.UbuntuonWindows_*\LocalState\rootfs</code>, delete <code>bin</code>, <code>etc</code>, <code>lib</code>, <code>lib64</code>, <code>lib32</code>, <code>libx32</code>, <code>sbin</code>, <code>usr</code> and <code>var</code>.</p>
+<p>Move (Don&rsquo;t copy) <code>bin</code>, <code>etc</code>, <code>lib</code>, <code>sbin</code>, <code>usr</code> and <code>var</code> from <code>rootfs\root\</code> to <code>rootfs</code>.</p>
+<p>Launch ubuntu again.</p>
+<p>Delete useless files in <code>/root</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># rm -rf ~/*
+</code></pre></td></tr></table>
+</div>
+</div><p>Install base-system:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># ARCH=x86_64-musl
+# XBPS_ARCH=$ARCH
+# xbps-install -Su xbps
+# xbps-install -u
+# xbps-install base-system
+# xbps-remove base-voidstrap
+</code></pre></td></tr></table>
+</div>
+</div><p>Go through the options in <code>/etc/rc.conf</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># vi /etc/rc.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>Set a root password:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># passwd
+</code></pre></td></tr></table>
+</div>
+</div><p>Create a new user:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># useradd -m -G wheel -s /bin/bash username
+# passwd username
+</code></pre></td></tr></table>
+</div>
+</div><p>Use xbps-reconfigure to ensure all installed packages are configured properly:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># xbps-reconfigure -fa
+</code></pre></td></tr></table>
+</div>
+</div><p>Exit ubuntu.</p>
+<p>Open powershell and set default user:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; ubuntu config --default-user username
+</code></pre></td></tr></table>
+</div>
+</div><p>Set WSL version to WSL2:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; wsl --set-version Ubuntu 2
+</code></pre></td></tr></table>
+</div>
+</div><p>Now we get a void linux on WSL2</p>
+<p><img src="https://gitlab.com/sainnhe/img/-/raw/master/void-wsl2.png" alt="void"></p>
+<h2 id="post-install">Post Install</h2>
+<p>Next you can follow the official guide to configure void linux: <a href="https://docs.voidlinux.org/config/index.html">https://docs.voidlinux.org/config/index.html</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">sainnhe</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-08-23
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/plasma-blur/">
+            <span class="next-text nav-default">Blur Any Window in KDE Plasma</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="sainnhe/sainnhe.github.io"
+            issue-term="pathname"
+            theme="photon-dark"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sainnhe@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/sainnhe/" class="iconfont icon-github" title="github"></a>
+  <a href="https://www.sainnhe.dev/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"> sainnhe</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.517858dd.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
