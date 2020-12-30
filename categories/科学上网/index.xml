@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Sat, 30 May 2020 16:32:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.sainnhe.dev/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 30 May 2020 16:32:00 +0800</lastBuildDate><atom:link href="https://www.sainnhe.dev/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过创建 Wifi 热点来共享 V2ray 代理</title>
       <link>https://www.sainnhe.dev/post/v2ray-hotspot/</link>

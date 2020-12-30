@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Fri, 08 May 2020 14:36:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.sainnhe.dev/categories/%E5%85%B6%E5%AE%83/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 08 May 2020 14:36:00 +0800</lastBuildDate><atom:link href="https://www.sainnhe.dev/categories/%E5%85%B6%E5%AE%83/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Contribution Guide for sainnhe/gruvbox-material-vscode</title>
       <link>https://www.sainnhe.dev/post/gruvbox-material-vscode-contrib/</link>
@@ -19,15 +15,6 @@
       
       <guid>https://www.sainnhe.dev/post/gruvbox-material-vscode-contrib/</guid>
       <description>Requirements Make sure you have the following programs installed: git nodejs Start First of all, let&amp;rsquo;s try to package this extension and install it to your vscode. 1 2 3 4 5 $ git clone --depth 1 https://github.com/sainnhe/gruvbox-material-vscode.git $ cd gruvbox-material-vscode $ npm install $ npm run package $ code --install-extension ./gruvbox-material-6.2.1.vsix Now, use vscode to open this project and modify some code, then press F5 to start debugging. The</description>
-    </item>
-    
-    <item>
-      <title>Preview of iCursive Nerd Fonts</title>
-      <link>https://www.sainnhe.dev/post/icursive-nerd-font-preview/</link>
-      <pubDate>Thu, 16 Apr 2020 12:59:23 +0800</pubDate>
-      
-      <guid>https://www.sainnhe.dev/post/icursive-nerd-font-preview/</guid>
-      <description>Fira Code iCursive S12 FiraCode(by tonsky, SIL Open Font License) + Script12 BT(by Bitstream, free for personal use) Fira Code iCursive Op (Non-free) FiraCode(by tonsky, SIL Open Font License) + Operator Mono(by Hoefler&amp;amp;Co, paid) Source Code Pro iCursive S12 Source Code Pro(by Paul D. Hunt (Adobe), SIL Open Font License) + Script12 BT(by Bitstream, free for personal use) Source Code Pro iCursive Op (Non-free) Source Code Pro(by Paul D. Hunt</description>
     </item>
     
     <item>

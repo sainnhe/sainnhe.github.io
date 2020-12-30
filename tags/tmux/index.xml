@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Wed, 08 Apr 2020 17:54:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.sainnhe.dev/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 08 Apr 2020 17:54:00 +0800</lastBuildDate><atom:link href="https://www.sainnhe.dev/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sexy &amp; Powerful Configuration for Lightline and Tmux</title>
       <link>https://www.sainnhe.dev/post/status-line-config/</link>

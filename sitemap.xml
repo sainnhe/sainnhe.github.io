@@ -114,20 +114,6 @@
   </url>
   
   <url>
-    <loc>https://www.sainnhe.dev/post/icursive-nerd-font-preview/</loc>
-    <lastmod>2020-05-08T18:31:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.sainnhe.dev/tags/vim/</loc>
-    <lastmod>2020-05-08T18:31:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.sainnhe.dev/post/status-line-config/</loc>
     <lastmod>2020-05-08T18:31:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -136,6 +122,13 @@
   
   <url>
     <loc>https://www.sainnhe.dev/tags/tmux/</loc>
+    <lastmod>2020-05-08T18:31:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sainnhe.dev/tags/vim/</loc>
     <lastmod>2020-05-08T18:31:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
