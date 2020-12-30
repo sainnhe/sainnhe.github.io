@@ -73,7 +73,7 @@
   
   <url>
     <loc>https://www.sainnhe.dev/tags/other/</loc>
-    <lastmod>2020-08-01T07:38:46+08:00</lastmod>
+    <lastmod>2020-05-30T16:32:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -88,27 +88,6 @@
   <url>
     <loc>https://www.sainnhe.dev/post/v2ray-hotspot/</loc>
     <lastmod>2020-05-30T16:32:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.sainnhe.dev/post/gruvbox-material-vscode-contrib/</loc>
-    <lastmod>2020-08-01T07:38:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.sainnhe.dev/tags/vscode/</loc>
-    <lastmod>2020-08-01T07:38:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.sainnhe.dev/categories/%E5%85%B6%E5%AE%83/</loc>
-    <lastmod>2020-08-01T07:38:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -130,6 +109,13 @@
   <url>
     <loc>https://www.sainnhe.dev/tags/vim/</loc>
     <lastmod>2020-05-08T18:31:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sainnhe.dev/categories/%E5%85%B6%E5%AE%83/</loc>
+    <lastmod>2020-04-09T21:36:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
