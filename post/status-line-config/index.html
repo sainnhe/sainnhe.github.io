@@ -27,7 +27,7 @@ The display of nerdfont can be affected by many factors, including terminal emul
 
 
 
-<meta name="generator" content="Hugo 0.79.1 with theme even" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://www.sainnhe.dev/post/status-line-config/" />
@@ -51,7 +51,7 @@ The display of nerdfont can be affected by many factors, including terminal emul
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.sainnhe.dev/post/status-line-config/" />
 <meta property="article:published_time" content="2020-04-08T17:54:00+08:00" />
-<meta property="article:modified_time" content="2020-05-08T18:31:09+08:00" />
+<meta property="article:modified_time" content="2021-01-25T15:30:20+08:00" />
 <meta itemprop="name" content="Sexy &amp; Powerful Configuration for Lightline and Tmux">
 <meta itemprop="description" content="Nerd Font First of all, install a nerd font, and apply it: nerd font
 Then, pick a unicode over here: nerd font cheat sheet. In this case, search keyword sep
@@ -59,8 +59,8 @@ After getting the unicode number, you can use it like this: :echo &quot;\ue0b9&q
 FAQ: Why are my nerdfont symbols not displaying correctly?
 The display of nerdfont can be affected by many factors, including terminal emulator, font type, font size, zoom, etc.">
 <meta itemprop="datePublished" content="2020-04-08T17:54:00+08:00" />
-<meta itemprop="dateModified" content="2020-05-08T18:31:09+08:00" />
-<meta itemprop="wordCount" content="312">
+<meta itemprop="dateModified" content="2021-01-25T15:30:20+08:00" />
+<meta itemprop="wordCount" content="381">
 
 
 
@@ -158,11 +158,11 @@ The display of nerdfont can be affected by many factors, including terminal emul
 <p>After getting the unicode number, you can use it like this: <code>:echo &quot;\ue0b9&quot;</code></p>
 <p><strong>FAQ:</strong> Why are my nerdfont symbols not displaying correctly?</p>
 <p>The display of nerdfont can be affected by many factors, including terminal emulator, font type, font size, zoom, etc.</p>
-<p>Personally, I use alacritty as terminal emulator, <a href="https://github.com/sainnhe/icursive-nerd-font">Fira Code iCursive Op</a> as font type, font size is 12, 2x zoom on my surface book 2.</p>
+<p>Personally, I use alacritty as terminal emulator, the font is <a href="https://github.com/sainnhe/icursive-nerd-font">Fira Code iCursive Op</a>, font size is 12, 2x zoom on my PC.</p>
 <p>You can adjust it yourself and choose a configuration that suits you.</p>
 <p>Btw, terminal emulators like alacritty support a featured that can adjust the offset, you may fix this problem through it.</p>
 <h2 id="lightline-configuration">Lightline Configuration</h2>
-<p>Maybe you have noticed that the font of lightline in the screenshot is somewhat different from the font in the vicinity, this simple trick is impl by <a href="https://github.com/sainnhe/artify.vim">sainnhe/artify.vim</a>.</p>
+<p>Maybe you have noticed that the font of lightline in the screenshot is somewhat different from the font in the vicinity, this simple trick is implemented by <a href="https://github.com/sainnhe/artify.vim">sainnhe/artify.vim</a>.</p>
 <p>The lightline configuration depends on these plugins:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -177,19 +177,19 @@ The display of nerdfont can be affected by many factors, including terminal emul
 <td class="lntd">
 <pre class="chroma"><code class="language-vim" data-lang="vim"><span class="nx">Plug</span> <span class="s1">&#39;itchyny/lightline.vim&#39;</span><span class="err">
 </span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;sainnhe/artify.vim&#39;</span><span class="err">
-</span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;itchyny/vim-gitbranch&#39;</span><span class="err">
-</span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;macthecadillac/lightline-gitdiff&#39;</span><span class="err">
-</span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;maximbaz/lightline-ale&#39;</span><span class="err">
-</span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;albertomontesg/lightline-asyncrun&#39;</span><span class="err">
+</span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;maximbaz/lightline-ale&#39;</span> <span class="c">&#34; Integration of https://github.com/dense-analysis/ale</span><span class="err">
+</span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;albertomontesg/lightline-asyncrun&#39;</span> <span class="c">&#34; Integration of https://github.com/skywind3000/asyncrun.vim</span><span class="err">
+</span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;neoclide/coc.nvim&#39;</span><span class="p">,</span> {<span class="s1">&#39;branch&#39;</span>: <span class="s1">&#39;release&#39;</span>} <span class="c">&#34; Git status is provided by coc-git</span><span class="err">
 </span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;rmolin88/pomodoro.vim&#39;</span><span class="err">
+</span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;ryanoasis/vim-devicons&#39;</span><span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><p>This is the configuration: <a href="https://github.com/sainnhe/dotfiles/blob/06f3529930ed545972eef5f73ea8c856c13dd015/.config/nvim/init.vim#L713-L900">dotfiles</a></p>
+</div><p>This is the configuration: <a href="https://github.com/sainnhe/dotfiles/blob/de6bbbd3279b0e72d90d58159dbdc96e4186bb94/.config/nvim/init.vim#L584-L741">dotfiles</a></p>
 <h2 id="tmux">Tmux</h2>
 <p>Tmux cannot display true colors correctly, check this issue for solution: <a href="https://github.com/tmux/tmux/issues/1246">How to use true colors in vim under tmux? #1246</a></p>
-<p>You can use <a href="https://unix.stackexchange.com/questions/404414/print-true-color-24-bit-test-pattern/404415#404415">this script</a> to test if true colors in tmux have been overridden. If there is no difference between executing this script in tmux and out of tmux, congratulations, this annoying bug has been solved.</p>
-<p>The tmux theme is implemented by <a href="https://github.com/edkolev/tmuxline.vim">edkolev/tmuxline.vim</a>, but it doesn&rsquo;t support true colors of lightline yet. There&rsquo;s a PR to solve this problem but has not been merged yet: <a href="https://github.com/edkolev/tmuxline.vim/pull/109">Add termguicolors support for lightline #109</a>. You can temporarily use <a href="https://github.com/hoov/tmuxline.vim/tree/truecolor-lightline">hoov/tmuxline.vim</a></p>
-<p>And this is the configuration of tmuxline: <a href="https://github.com/sainnhe/dotfiles/blob/06f3529930ed545972eef5f73ea8c856c13dd015/.config/nvim/init.vim#L901-L920">dotfiles</a></p>
+<p>You can use <a href="https://unix.stackexchange.com/questions/404414/print-true-color-24-bit-test-pattern/404415#404415">this script</a> to test if true colors in tmux have been overridden. If there is no difference between executing this script in tmux and out of tmux, congratulations, this annoying bug has been fixed.</p>
+<p>The tmux theme is implemented by <a href="https://github.com/edkolev/tmuxline.vim">edkolev/tmuxline.vim</a>, but it doesn&rsquo;t support true colors of lightline yet. There&rsquo;s a PR to solve this problem but has not been merged yet: <a href="https://github.com/edkolev/tmuxline.vim/pull/109">Add termguicolors support for lightline #109</a>. You can temporarily use <a href="https://github.com/hoov/tmuxline.vim/tree/truecolor-lightline">hoov/tmuxline.vim</a> (or <a href="https://github.com/sainnhe/tmuxline.vim">my fork</a>).</p>
+<p>And this is the configuration of tmuxline: <a href="https://github.com/sainnhe/dotfiles/blob/de6bbbd3279b0e72d90d58159dbdc96e4186bb94/.config/nvim/init.vim#L742-L761">dotfiles</a></p>
 <p>It depends on these plugins:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -200,10 +200,11 @@ The display of nerdfont can be affected by many factors, including terminal emul
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">set -g @plugin &#39;tmux-plugins/tmux-prefix-highlight&#39;
 set -g @plugin &#39;tmux-plugins/tmux-net-speed&#39;
-set -g @plugin &#39;samoshkin/tmux-plugin-sysstat&#39;
+set -g @plugin &#39;samoshkin/tmux-plugin-sysstat&#39; # `sysstat_ntemp` and `sysstat_itemp` are temperatures of nvidia card and intel card, these scripts are available in my fork: https://github.com/sainnhe/tmux-plugin-sysstat
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><p>Note that if some tmux plugins didn&rsquo;t display correctly when vim mode is changed, you can try to create a snapshot using <code>:TmuxlineSnapshot</code> command and source this configuration file in <code>~/.tmux.conf</code>.</p>
+
     </div>
 
     <div class="post-copyright">
@@ -214,7 +215,7 @@ set -g @plugin &#39;samoshkin/tmux-plugin-sysstat&#39;
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-05-08
+        2021-01-25
         
     </span>
   </p>
@@ -274,7 +275,8 @@ set -g @plugin &#39;samoshkin/tmux-plugin-sysstat&#39;
 
   <span class="copyright-year">
     &copy; 
-    2020
+    2020 - 
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
