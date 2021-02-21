@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Create Personal Arch Linux Package Repository via GitHub Pages - sainnhe&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#313441" />
+<meta name="msapplication-navbutton-color" content="#313441">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#313441">
+
+
+<meta name="author" content="sainnhe" /><meta name="description" content="About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
+In this article, I&amp;rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
+
+
+<link rel="canonical" href="https://www.sainnhe.dev/post/create-personal-arch-linux-package-repository/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.19d8f9d5.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Create Personal Arch Linux Package Repository via GitHub Pages" />
+<meta property="og:description" content="About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
+In this article, I&rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.sainnhe.dev/post/create-personal-arch-linux-package-repository/" />
+<meta property="article:published_time" content="2021-02-21T16:10:05+08:00" />
+<meta property="article:modified_time" content="2021-02-21T16:15:41+08:00" />
+<meta itemprop="name" content="Create Personal Arch Linux Package Repository via GitHub Pages">
+<meta itemprop="description" content="About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
+In this article, I&rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package.">
+<meta itemprop="datePublished" content="2021-02-21T16:10:05+08:00" />
+<meta itemprop="dateModified" content="2021-02-21T16:15:41+08:00" />
+<meta itemprop="wordCount" content="1972">
+
+
+
+<meta itemprop="keywords" content="linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Create Personal Arch Linux Package Repository via GitHub Pages"/>
+<meta name="twitter:description" content="About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
+In this article, I&rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">sainnhe&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">sainnhe&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Create Personal Arch Linux Package Repository via GitHub Pages</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-21 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#build-signed-packages">Build signed packages</a>
+      <ul>
+        <li><a href="#create-your-gpg-key">Create your gpg key</a></li>
+        <li><a href="#configure-pacman">Configure pacman</a></li>
+        <li><a href="#configure-makepkg">Configure makepkg</a></li>
+        <li><a href="#build-signed-packages-1">Build signed packages</a></li>
+      </ul>
+    </li>
+    <li><a href="#create-arch-linux-package-repository">Create arch linux package repository</a>
+      <ul>
+        <li><a href="#create-a-local-package-repository">Create a local package repository</a></li>
+        <li><a href="#publish-via-github-pages">Publish via github pages</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="about">About</h2>
+<p>For whatever reasons, you may want to create your own package repository, like this: <a href="https://repo.sainnhe.dev/">repo.sainnhe.dev</a></p>
+<p>In this article, I&rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.</p>
+<h2 id="build-signed-packages">Build signed packages</h2>
+<h3 id="create-your-gpg-key">Create your gpg key</h3>
+<p>When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package. This is the minimalist steps to build a package, but by this way your package is not signed.</p>
+<p>The goal of signing package is to guarantee that a package was created by the person that claims to have made it. Arch linux uses GnuPG to implement this feature, so let&rsquo;s get start from GnuPG.</p>
+<p>First of all, let&rsquo;s create a gpg key:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">~
+❯ gpg --full-generate-key
+gpg (GnuPG) 2.2.27; Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+gpg: directory &#39;/home/sainnhe/.gnupg&#39; created
+gpg: keybox &#39;/home/sainnhe/.gnupg/pubring.kbx&#39; created
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+  (14) Existing key from card
+Your selection? 1
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (3072)
+Requested keysize is 3072 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      &lt;n&gt;  = key expires in n days
+      &lt;n&gt;w = key expires in n weeks
+      &lt;n&gt;m = key expires in n months
+      &lt;n&gt;y = key expires in n years
+Key is valid for? (0) 5y
+Key expires at Fri 20 Feb 2026 02:46:59 PM CST
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: Sainnhe Park
+Email address: sainnhe@gmail.com
+Comment:
+You selected this USER-ID:
+    &#34;Sainnhe Park &lt;sainnhe@gmail.com&gt;&#34;
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: /home/sainnhe/.gnupg/trustdb.gpg: trustdb created
+gpg: key 2C316AF89E7074F3 marked as ultimately trusted
+gpg: directory &#39;/home/sainnhe/.gnupg/openpgp-revocs.d&#39; created
+gpg: revocation certificate stored as &#39;/home/sainnhe/.gnupg/openpgp-revocs.d/410B4A906DF63761AA2B26DC2C316AF89E7074F3.rev&#39;
+public and secret key created and signed.
+
+pub   rsa3072 2021-02-21 [SC] [expires: 2026-02-20]
+      410B4A906DF63761AA2B26DC2C316AF89E7074F3
+uid                      Sainnhe Park &lt;sainnhe@gmail.com&gt;
+sub   rsa3072 2021-02-21 [E] [expires: 2026-02-20]
+</code></pre></td></tr></table>
+</div>
+</div><p>Now you can use this command to check the key you just created:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">~
+❯ gpg --list-keys
+gpg: checking the trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: next trustdb check due at 2026-02-20
+/home/sainnhe/.gnupg/pubring.kbx
+--------------------------------
+pub   rsa3072 2021-02-21 [SC] [expires: 2026-02-20]
+      410B4A906DF63761AA2B26DC2C316AF89E7074F3
+uid           [ultimate] Sainnhe Park &lt;sainnhe@gmail.com&gt;
+sub   rsa3072 2021-02-21 [E] [expires: 2026-02-20]
+</code></pre></td></tr></table>
+</div>
+</div><p>Here, you need to pay attention to two information.</p>
+<p>In the output of this command, <code>410B4A906DF63761AA2B26DC2C316AF89E7074F3</code> is your key id, and <code>sainnhe@gmail.com</code> is your email.</p>
+<p><code>410B4A906DF63761AA2B26DC2C316AF89E7074F3</code> is the full key id which contains 40 characters, but sometimes we can use the last 16 characters to represent this key, i.e. <code>2C316AF89E7074F3</code>, this is the &ldquo;short key&rdquo;.</p>
+<p>We will use them later.</p>
+<p>So we successfully created a gpg key. Next, let&rsquo;s share it with others.</p>
+<p>Generally, there are two methods to share your keys. One of the methods is to send your key to key server, then people can get it from the Internet.</p>
+<p>Let&rsquo;s try to send your key to key server first. It&rsquo;s pretty easy, simple execute this command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ gpg --send-keys 410B4A906DF63761AA2B26DC2C316AF89E7074F3
+</code></pre></td></tr></table>
+</div>
+</div><p>If this command is successfully executed, other people can receive your key by this command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ gpg --recv-keys 410B4A906DF63761AA2B26DC2C316AF89E7074F3
+</code></pre></td></tr></table>
+</div>
+</div><p>Or use the short key here:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ gpg --recv-keys 2C316AF89E7074F3
+</code></pre></td></tr></table>
+</div>
+</div><p>Another method is to generate a key file and share it with others, then people can directly import your gpg key from this file.</p>
+<p>To generate the key file, execute the following command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ gpg --output sainnhe.gpg --armor --export 410B4A906DF63761AA2B26DC2C316AF89E7074F3
+</code></pre></td></tr></table>
+</div>
+</div><p>Then we&rsquo;ll get a key file named <code>sainnhe.gpg</code>.</p>
+<p>To import this key, execute the following command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ gpg --import /path/to/sainnhe.gpg
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="configure-pacman">Configure pacman</h3>
+<p>Now let&rsquo;s configure pacman to use this gpg key.</p>
+<p>Like gpg, there are also two methods for pacman to import a gpg key.</p>
+<p>Mehod 1 is to receive it from key server:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo pacman-key --recv-keys 2C316AF89E7074F3
+</code></pre></td></tr></table>
+</div>
+</div><p>Another method is to directly import this key from a key file:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo pacman-key --add /path/to/sainnhe.gpg
+</code></pre></td></tr></table>
+</div>
+</div><p>After importing this key, it&rsquo;s recommended to verify the fingerprint:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo pacman-key --finger 2C316AF89E7074F3
+</code></pre></td></tr></table>
+</div>
+</div><p>Finally, we need to locally sign the key:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo pacman-key --lsign-key 2C316AF89E7074F3
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="configure-makepkg">Configure makepkg</h3>
+<p>If you want to build packages signed with this key, you&rsquo;ll also need to configure makepkg.</p>
+<p>In your <code>/etc/makepkg.conf</code>, uncomment and modify the following lines:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">#-- Packager: name/email of the person or organization building packages
+PACKAGER=&#34;Sainnhe Park &lt;sainnhe@gmail.com&gt;&#34;
+#-- Specify a key to use for package signing
+GPGKEY=&#34;2C316AF89E7074F3&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>Remember to change the <code>PACKAGER</code> field, too. This will determine the <code>Packager</code> section in your package.</p>
+<h3 id="build-signed-packages-1">Build signed packages</h3>
+<p>Now let&rsquo;s try to build a signed package.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">~
+❯ cd repo
+────────────────────────────────────────────────────────────────────
+~/repo
+❯ git clone https://aur.archlinux.org/pikaur.git
+Cloning into &#39;pikaur&#39;...
+remote: Enumerating objects: 547, done.
+remote: Counting objects: 100% (547/547), done.
+remote: Compressing objects: 100% (313/313), done.
+remote: Total 547 (delta 234), reused 547 (delta 234), pack-reused 0
+Receiving objects: 100% (547/547), 142.15 KiB | 260.00 KiB/s, done.
+Resolving deltas: 100% (234/234), done.
+────────────────────────────────────────────────────────────────────
+~/repo
+❯ cd pikaur
+────────────────────────────────────────────────────────────────────
+~/repo/pikaur   master
+❯ makepkg -sr --sign
+==&gt; Making package: pikaur 1.6.16.2-1 (Sun 21 Feb 2021 03:34:59 PM CST)
+==&gt; Checking runtime dependencies...
+==&gt; Checking buildtime dependencies...
+==&gt; Installing missing dependencies...
+[sudo] password for sainnhe:
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) python-commonmark-0.9.1-3
+
+Total Download Size:   0.10 MiB
+Total Installed Size:  0.45 MiB
+
+:: Proceed with installation? [Y/n]
+:: Retrieving packages...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  100k  100  100k    0     0  35734      0  0:00:02  0:00:02 --:--:-- 35747
+(1/1) checking keys in keyring                                                                      [###########################################################] 100%
+(1/1) checking package integrity                                                                    [###########################################################] 100%
+(1/1) loading package files                                                                         [###########################################################] 100%
+(1/1) checking for file conflicts                                                                   [###########################################################] 100%
+(1/1) checking available disk space                                                                 [###########################################################] 100%
+:: Processing package changes...
+(1/1) installing python-commonmark                                                                  [###########################################################] 100%
+:: Running post-transaction hooks...
+(1/3) Arming ConditionNeedsUpdate...
+(2/3) Sync file system on /
+(3/3) Updating pkgfile database
+==&gt; Retrieving sources...
+  -&gt; Downloading pikaur-1.6.16.2.tar.gz...
+==&gt; Validating source files with md5sums...
+    pikaur-1.6.16.2.tar.gz ... Passed
+==&gt; Extracting sources...
+  -&gt; Extracting pikaur-1.6.16.2.tar.gz with bsdtar
+==&gt; Starting build()...
+==&gt; Entering fakeroot environment...
+==&gt; Starting package()...
+==&gt; Tidying install...
+  -&gt; Removing libtool files...
+  -&gt; Purging unwanted files...
+  -&gt; Removing static library files...
+  -&gt; Stripping unneeded symbols from binaries and libraries...
+  -&gt; Compressing man and info pages...
+==&gt; Checking for packaging issues...
+==&gt; Creating package &#34;pikaur&#34;...
+  -&gt; Generating .PKGINFO file...
+  -&gt; Generating .BUILDINFO file...
+  -&gt; Generating .MTREE file...
+  -&gt; Compressing package...
+==&gt; Leaving fakeroot environment.
+==&gt; Signing package(s)...
+  -&gt; Created signature file pikaur-1.6.16.2-1-any.pkg.tar.zst.sig.
+==&gt; Finished making: pikaur 1.6.16.2-1 (Sun 21 Feb 2021 03:35:37 PM CST)
+==&gt; Removing installed dependencies...
+checking dependencies...
+
+Packages (1) python-commonmark-0.9.1-3
+
+Total Removed Size:  0.45 MiB
+
+:: Do you want to remove these packages? [Y/n]
+:: Processing package changes...
+(1/1) removing python-commonmark                                                                    [###########################################################] 100%
+:: Running post-transaction hooks...
+(1/3) Arming ConditionNeedsUpdate...
+(2/3) Sync file system on /
+(3/3) Updating pkgfile database
+────────────────────────────────────────────────────────────────────
+~/repo/pikaur   master ✩
+❯ ls
+ CHANGELOG   pikaur-1.6.16.2-1-any.pkg.tar.zst   pikaur-1.6.16.2-1-any.pkg.tar.zst.sig   pikaur-1.6.16.2.tar.gz   pkg   PKGBUILD   src
+</code></pre></td></tr></table>
+</div>
+</div><p>The main difference between building signed packages with building unsigned packages is that you need to pass <code>--sign</code> argument to <code>makepkg</code>.</p>
+<p>And after building a signed package, we will get not only a <code>*.pkg.tar.zst</code>, but also a <code>*.pkg.tar.zst.sig</code> file. This <code>*.pkg.tar.zst.sig</code> file is the binary signature of this package, we&rsquo;ll need to add both of these two files to our package repository.</p>
+<h2 id="create-arch-linux-package-repository">Create arch linux package repository</h2>
+<h3 id="create-a-local-package-repository">Create a local package repository</h3>
+<p>So let&rsquo;s create a repository first, then we will push it to github and publish this repository via github pages.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">~
+❯ cd repo
+────────────────────────────────────────────────────────────────────
+~/repo
+❯ mkdir my_repo
+────────────────────────────────────────────────────────────────────
+~/repo
+❯ cd my_repo
+────────────────────────────────────────────────────────────────────
+~/repo/my_repo
+❯ git init
+hint: Using &#39;master&#39; as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch &lt;name&gt;
+hint:
+hint: Names commonly chosen instead of &#39;master&#39; are &#39;main&#39;, &#39;trunk&#39; and
+hint: &#39;development&#39;. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m &lt;name&gt;
+Initialized empty Git repository in /home/sainnhe/repo/my_repo/.git/
+────────────────────────────────────────────────────────────────────
+~/repo/my_repo   master
+❯ mkdir x86_64
+────────────────────────────────────────────────────────────────────
+~/repo/my_repo   master
+❯ cd x86_64
+────────────────────────────────────────────────────────────────────
+~/repo/my_repo/x86_64   master
+❯ mv ~/repo/pikaur/pikaur-1.6.16.2-1-any.pkg.tar.zst ./
+────────────────────────────────────────────────────────────────────
+~/repo/my_repo/x86_64   master ✩
+❯ mv ~/repo/pikaur/pikaur-1.6.16.2-1-any.pkg.tar.zst.sig ./
+────────────────────────────────────────────────────────────────────
+~/repo/my_repo/x86_64   master ✩
+❯ repo-add --verify --sign sainnhe.db.tar.gz *.pkg.tar.zst
+==&gt; Adding package &#39;pikaur-1.6.16.2-1-any.pkg.tar.zst&#39;
+  -&gt; Adding package signature...
+  -&gt; Computing checksums...
+  -&gt; Creating &#39;desc&#39; db entry...
+  -&gt; Creating &#39;files&#39; db entry...
+==&gt; Creating updated database file &#39;sainnhe.db.tar.gz&#39;
+==&gt; Signing database &#39;sainnhe.db.tar.gz&#39;...
+  -&gt; Created signature file &#39;sainnhe.db.tar.gz.sig&#39;
+==&gt; Signing database &#39;sainnhe.files.tar.gz&#39;...
+  -&gt; Created signature file &#39;sainnhe.files.tar.gz.sig&#39;
+────────────────────────────────────────────────────────────────────
+~/repo/my_repo/x86_64   master ✩
+❯ ls
+ pikaur-1.6.16.2-1-any.pkg.tar.zst       sainnhe.db       sainnhe.db.tar.gz       sainnhe.files       sainnhe.files.tar.gz
+ pikaur-1.6.16.2-1-any.pkg.tar.zst.sig   sainnhe.db.sig   sainnhe.db.tar.gz.sig   sainnhe.files.sig   sainnhe.files.tar.gz.sig
+</code></pre></td></tr></table>
+</div>
+</div><p>Note that we need to pass <code>--verify --sign</code> to <code>repo-add</code> so a detached signature of the repository database will be generated.</p>
+<p>Now we successfully get a package repository named <code>sainnhe</code>.</p>
+<h3 id="publish-via-github-pages">Publish via github pages</h3>
+<p>Create a new public github repository, and push <code>my_repo</code> to this public repository.</p>
+<p>Visit the settings page of this repository: <code>https://github.com/sainnhe/my_repo/settings</code></p>
+<p>Navigate to &ldquo;GitHub Pages&rdquo; section and change the &ldquo;Source&rdquo; field from &ldquo;None&rdquo; to &ldquo;Branch: master&rdquo;.</p>
+<p>Wait for several minutes, and your github pages will be published at <code>https://sainnhe.github.io/my_repo</code>.</p>
+<p>So the url of package repository should be <code>https://sainnhe.github.io/my_repo/x86_64</code>.</p>
+<p>To add this repository, add something like this at the end of <code>/etc/pacman.conf</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dosini" data-lang="dosini"><span class="k">[sainnhe]</span>
+<span class="na">Server</span> <span class="o">=</span> <span class="s">https://sainnhe.github.io/my_repo/x86_64</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now refresh the package databases and your package repository will be successfully added.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo pacman -Sy
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">sainnhe</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-02-21
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/void-wsl2/">
+            <span class="next-text nav-default">Install Void Linux on WSL2</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="sainnhe/sainnhe.github.io"
+            issue-term="pathname"
+            theme="photon-dark"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sainnhe@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/sainnhe/" class="iconfont icon-github" title="github"></a>
+  <a href="https://www.sainnhe.dev/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"> sainnhe</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.517858dd.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

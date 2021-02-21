@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright> sainnhe</copyright>
-    <lastBuildDate>Sun, 23 Aug 2020 10:51:21 +0800</lastBuildDate><atom:link href="https://www.sainnhe.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Feb 2021 16:10:05 +0800</lastBuildDate><atom:link href="https://www.sainnhe.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于</title>
       <link>https://www.sainnhe.dev/about/</link>
@@ -15,6 +15,17 @@
       
       <guid>https://www.sainnhe.dev/about/</guid>
       <description>About 关于我 目前就读于西安电子科技大学通信工程专业。 喜欢 写代码 写 Bug，有空的时候会做点小玩意。 日用 Arch Linux，但其实菜得扣脚 (=￣ω￣=) Vim</description>
+    </item>
+    
+    <item>
+      <title>Create Personal Arch Linux Package Repository via GitHub Pages</title>
+      <link>https://www.sainnhe.dev/post/create-personal-arch-linux-package-repository/</link>
+      <pubDate>Sun, 21 Feb 2021 16:10:05 +0800</pubDate>
+      
+      <guid>https://www.sainnhe.dev/post/create-personal-arch-linux-package-repository/</guid>
+      <description>About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
+In this article, I&amp;rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package.</description>
     </item>
     
     <item>
