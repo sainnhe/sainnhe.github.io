@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="sainnhe" /><meta name="description" content="About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
-In this article, I&amp;rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+In this article, I&amp;rsquo;m going to record my steps to create my own arch linux package repository, via github pages, no need to maintain your server.
 Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package." /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -42,19 +42,19 @@ Build signed packages Create your gpg key When you installed a package from AUR,
 
 <meta property="og:title" content="Create Personal Arch Linux Package Repository via GitHub Pages" />
 <meta property="og:description" content="About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
-In this article, I&rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+In this article, I&rsquo;m going to record my steps to create my own arch linux package repository, via github pages, no need to maintain your server.
 Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.sainnhe.dev/post/create-personal-arch-linux-package-repository/" />
 <meta property="article:published_time" content="2021-02-21T16:10:05+08:00" />
-<meta property="article:modified_time" content="2021-02-21T16:15:41+08:00" />
+<meta property="article:modified_time" content="2021-02-22T12:13:25+08:00" />
 <meta itemprop="name" content="Create Personal Arch Linux Package Repository via GitHub Pages">
 <meta itemprop="description" content="About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
-In this article, I&rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+In this article, I&rsquo;m going to record my steps to create my own arch linux package repository, via github pages, no need to maintain your server.
 Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package.">
 <meta itemprop="datePublished" content="2021-02-21T16:10:05+08:00" />
-<meta itemprop="dateModified" content="2021-02-21T16:15:41+08:00" />
-<meta itemprop="wordCount" content="1972">
+<meta itemprop="dateModified" content="2021-02-22T12:13:25+08:00" />
+<meta itemprop="wordCount" content="1983">
 
 
 
@@ -62,7 +62,7 @@ Build signed packages Create your gpg key When you installed a package from AUR,
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create Personal Arch Linux Package Repository via GitHub Pages"/>
 <meta name="twitter:description" content="About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
-In this article, I&rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+In this article, I&rsquo;m going to record my steps to create my own arch linux package repository, via github pages, no need to maintain your server.
 Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package."/>
 
 <!--[if lte IE 9]>
@@ -168,7 +168,7 @@ Build signed packages Create your gpg key When you installed a package from AUR,
     <div class="post-content">
       <h2 id="about">About</h2>
 <p>For whatever reasons, you may want to create your own package repository, like this: <a href="https://repo.sainnhe.dev/">repo.sainnhe.dev</a></p>
-<p>In this article, I&rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.</p>
+<p>In this article, I&rsquo;m going to record my steps to create my own arch linux package repository, via github pages, no need to maintain your server.</p>
 <h2 id="build-signed-packages">Build signed packages</h2>
 <h3 id="create-your-gpg-key">Create your gpg key</h3>
 <p>When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package. This is the minimalist steps to build a package, but by this way your package is not signed.</p>
@@ -321,13 +321,13 @@ uid           [ultimate] Sainnhe Park &lt;sainnhe@gmail.com&gt;
 sub   rsa3072 2021-02-21 [E] [expires: 2026-02-20]
 </code></pre></td></tr></table>
 </div>
-</div><p>Here, you need to pay attention to two information.</p>
+</div><p>Here, you need to pay attention to two key points.</p>
 <p>In the output of this command, <code>410B4A906DF63761AA2B26DC2C316AF89E7074F3</code> is your key id, and <code>sainnhe@gmail.com</code> is your email.</p>
 <p><code>410B4A906DF63761AA2B26DC2C316AF89E7074F3</code> is the full key id which contains 40 characters, but sometimes we can use the last 16 characters to represent this key, i.e. <code>2C316AF89E7074F3</code>, this is the &ldquo;short key&rdquo;.</p>
 <p>We will use them later.</p>
 <p>So we successfully created a gpg key. Next, let&rsquo;s share it with others.</p>
-<p>Generally, there are two methods to share your keys. One of the methods is to send your key to key server, then people can get it from the Internet.</p>
-<p>Let&rsquo;s try to send your key to key server first. It&rsquo;s pretty easy, simple execute this command:</p>
+<p>Generally, there are two methods to share your keys. One of them is to send your key to a key server, then people can download it from the Internet.</p>
+<p>Let&rsquo;s try to send your key to a key server first. It&rsquo;s pretty easy, simplely execute this command:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -336,7 +336,7 @@ sub   rsa3072 2021-02-21 [E] [expires: 2026-02-20]
 <pre class="chroma"><code class="language-shell" data-lang="shell">$ gpg --send-keys 410B4A906DF63761AA2B26DC2C316AF89E7074F3
 </code></pre></td></tr></table>
 </div>
-</div><p>If this command is successfully executed, other people can receive your key by this command:</p>
+</div><p>If this command is executed successfully, other people can receive your key by running this command:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -619,7 +619,7 @@ Total Removed Size:  0.45 MiB
  CHANGELOG   pikaur-1.6.16.2-1-any.pkg.tar.zst   pikaur-1.6.16.2-1-any.pkg.tar.zst.sig   pikaur-1.6.16.2.tar.gz   pkg   PKGBUILD   src
 </code></pre></td></tr></table>
 </div>
-</div><p>The main difference between building signed packages with building unsigned packages is that you need to pass <code>--sign</code> argument to <code>makepkg</code>.</p>
+</div><p>The main difference between building signed packages with building unsigned packages is that you need to pass <code>--sign</code> argument to <code>makepkg</code> if you want to build signed packages.</p>
 <p>And after building a signed package, we will get not only a <code>*.pkg.tar.zst</code>, but also a <code>*.pkg.tar.zst.sig</code> file. This <code>*.pkg.tar.zst.sig</code> file is the binary signature of this package, we&rsquo;ll need to add both of these two files to our package repository.</p>
 <h2 id="create-arch-linux-package-repository">Create arch linux package repository</h2>
 <h3 id="create-a-local-package-repository">Create a local package repository</h3>
@@ -773,7 +773,7 @@ Initialized empty Git repository in /home/sainnhe/repo/my_repo/.git/
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-02-21
+        2021-02-22
         
     </span>
   </p>

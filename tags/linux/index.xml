@@ -15,7 +15,7 @@
       
       <guid>https://www.sainnhe.dev/post/create-personal-arch-linux-package-repository/</guid>
       <description>About For whatever reasons, you may want to create your own package repository, like this: repo.sainnhe.dev
-In this article, I&amp;rsquo;m going to record my steps to create my arch linux package repository, via github pages, no need to maintain your server.
+In this article, I&amp;rsquo;m going to record my steps to create my own arch linux package repository, via github pages, no need to maintain your server.
 Build signed packages Create your gpg key When you installed a package from AUR, you generally cloned a repo that contains a PKGBUILD file, then you executed makepkg to build this package.</description>
     </item>
     
