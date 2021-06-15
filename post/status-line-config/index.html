@@ -27,7 +27,7 @@ The display of nerdfont can be affected by many factors, including terminal emul
 
 
 
-<meta name="generator" content="Hugo 0.82.0 with theme even" />
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
 <link rel="canonical" href="https://www.sainnhe.dev/post/status-line-config/" />
@@ -178,12 +178,12 @@ The display of nerdfont can be affected by many factors, including terminal emul
 </span><span class="err"></span><span class="nx">Plug</span> <span class="s1">&#39;ryanoasis/vim-devicons&#39;</span><span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><p>This is the configuration: <a href="https://github.com/sainnhe/dotfiles/blob/b8ab07d2ec0f6857f6140f4ab22a442f00a09a0e/.config/nvim/init.vim#L548-L733">dotfiles</a></p>
+</div><p>This is the configuration: <a href="https://github.com/sainnhe/dotfiles/blob/0deab24ca971a6c226e54793285f0a194878de96/.config/nvim/features/full.vim#L10-L97">dotfiles</a></p>
 <h2 id="tmux">Tmux</h2>
 <p>Tmux cannot display true colors correctly, check this issue for solution: <a href="https://github.com/tmux/tmux/issues/1246">How to use true colors in vim under tmux? #1246</a></p>
 <p>You can use <a href="https://unix.stackexchange.com/questions/404414/print-true-color-24-bit-test-pattern/404415#404415">this script</a> to test if true colors in tmux have been overridden. If there is no difference between executing this script in tmux and out of tmux, congratulations, this annoying bug has been fixed.</p>
 <p>The tmux theme is implemented by <a href="https://github.com/edkolev/tmuxline.vim">edkolev/tmuxline.vim</a>, but it doesn&rsquo;t support true colors of lightline yet. There&rsquo;s a PR to solve this problem but has not been merged yet: <a href="https://github.com/edkolev/tmuxline.vim/pull/109">Add termguicolors support for lightline #109</a>. You can temporarily use <a href="https://github.com/hoov/tmuxline.vim/tree/truecolor-lightline">hoov/tmuxline.vim</a> (or <a href="https://github.com/sainnhe/tmuxline.vim">my fork</a>).</p>
-<p>And this is the configuration of tmuxline: <a href="https://github.com/sainnhe/dotfiles/blob/de6bbbd3279b0e72d90d58159dbdc96e4186bb94/.config/nvim/init.vim#L742-L761">dotfiles</a></p>
+<p>And this is the configuration of tmuxline: <a href="https://github.com/sainnhe/dotfiles/blob/0deab24ca971a6c226e54793285f0a194878de96/.config/nvim/features/full.vim#L98-L117">dotfiles</a></p>
 <p>It depends on these plugins:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
